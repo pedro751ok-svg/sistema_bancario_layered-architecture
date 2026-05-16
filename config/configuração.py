@@ -1,0 +1,1 @@
+#responsavel pela leitura das config
