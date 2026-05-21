@@ -112,4 +112,4 @@ Authorization: Bearer seu_token
 
 **Pedro Henrique Messias Neris**
 - GitHub: [@pedro751ok-svg](https://github.com/pedro751ok-svg)
-- LinkedIn: [Seu Perfil no LinkedIn](https://linkedin.com/in/seu-usuario)
+- LinkedIn: [Seu Perfil no LinkedIn](www.linkedin.com/in/pedro-mesias-727715264)
