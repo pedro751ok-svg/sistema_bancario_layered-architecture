@@ -1,13 +1,13 @@
 from models.cliente_model import Conta
 from models.cliente_model import Cliente
 from models.cliente_model import session
-from utils.regras_auxiliares import regras_nedocio_auxiliares
+from utils.regras_auxiliares import validar_cpf,senha_segura
 from models.cliente_model import Transacao
 class Authenticarservice:
 
     @staticmethod
     def cadastrar(nome,idade,cpf,senha):
-        if not regras_nedocio_auxiliares.validar_cpf(cpf):
+        if not validar_cpf.validar_cpf(cpf):
             return "CPF invalido"
         
         with session() as sessao:
@@ -15,7 +15,7 @@ class Authenticarservice:
             if cpf_existennte:
                 return "cliente ja cadastrado"
             
-            senha_1 = regras_nedocio_auxiliares.senha_hash(senha)
+            senha_1 = senha_segura.senha_hash(senha)
             cliente = Cliente(
             nome=nome,
             idade=idade,
@@ -39,7 +39,7 @@ class Authenticarservice:
  
             if not cliente:
                 return "cliente nao encontrado ou nao criado ainda "
-            senha_valida = regras_nedocio_auxiliares.verificar_senha(senha,cliente.senha)
+            senha_valida = senha_segura.verificar_senha(senha,cliente.senha)
             if not senha_valida:
                 return "senha invalida"
             return cliente

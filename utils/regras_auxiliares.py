@@ -1,6 +1,6 @@
 import bcrypt
 
-class regras_nedocio_auxiliares:
+class validar_cpf:
     @staticmethod
     def calcular_cpf(cpf,peso):
         soma = 0 
@@ -15,10 +15,10 @@ class regras_nedocio_auxiliares:
         if len(cpf) != 11 or cpf == cpf[0] * 11:
             return False
         
-        digit1 = regras_nedocio_auxiliares.calcular_cpf(cpf,9)
-        digit2 = regras_nedocio_auxiliares.calcular_cpf(cpf,10)
-
+        digit1 = validar_cpf.calcular_cpf(cpf,9)
+        digit2 = validar_cpf.calcular_cpf(cpf,10)
         return cpf [-2:] == f"{digit1}{digit2}"
+class senha_segura:
     @staticmethod
     def senha_hash(senha_digitada):
         senha =  senha_digitada.encode("Utf-8")
